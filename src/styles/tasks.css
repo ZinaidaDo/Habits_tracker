@@ -1,0 +1,197 @@
+/* --- Список задач выбранного раздела (этап 3) --- */
+
+.sections-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.task-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.task-panel__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.task-item--done {
+  opacity: 0.72;
+}
+
+.task-item--done .task-item__title {
+  text-decoration: line-through;
+}
+
+.task-item__body {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* Быстрая галочка выполнения (этап 5) */
+.task-item__check {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--color-success);
+  cursor: pointer;
+}
+
+/* Меню «Переместить в раздел…» (этап 6) */
+.task-item__move {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.task-item__move select {
+  max-width: 170px;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+.task-item__move select:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.task-status {
+  align-self: flex-start;
+  padding: 0 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.task-status--in_progress {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.task-status--postponed {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.task-status--done {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.task-item__title {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.task-item__description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.task-item__due {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.task-item__actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .task-item__actions {
+    opacity: 0;
+    transition: opacity 120ms ease-in-out;
+  }
+
+  .task-item:hover .task-item__actions,
+  .task-item:focus-within .task-item__actions {
+    opacity: 1;
+  }
+}
+
+.task-item__action {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.task-item__action:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.task-item__action:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* --- Поля формы задачи --- */
+
+.form-field input[type='date'],
+.form-field textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+/* --- Окно подтверждения --- */
+
+.confirm-message {
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}

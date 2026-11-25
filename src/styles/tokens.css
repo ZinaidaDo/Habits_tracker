@@ -1,0 +1,89 @@
+/*
+ * Дизайн-токены.
+ * Светлая тема — по умолчанию; тёмная — через prefers-color-scheme
+ * или явно через data-theme="dark" на <html> (задание этапа 8).
+ */
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-surface-hover: #eef1f6;
+  --color-text: #14181f;
+  --color-text-muted: #5a6472;
+  --color-border: #d9dee7;
+  --color-primary: #2f6fed;
+  --color-primary-hover: #245bc9;
+  --color-primary-contrast: #ffffff;
+  --color-focus: #2f6fed;
+  --color-success: #1f9d55;
+  --color-warning: #b9740a;
+  --color-danger: #d43f3f;
+  --color-on-danger: #ffffff;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-full: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 6%);
+  --shadow-md: 0 4px 12px rgb(16 24 40 / 8%);
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-base: 16px;
+  --nav-height: 60px;
+  --content-max-width: 1024px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --color-bg: #10141a;
+    --color-surface: #1a212b;
+    --color-surface-hover: #232c39;
+    --color-text: #e8ecf2;
+    --color-text-muted: #9aa5b5;
+    --color-border: #2c3644;
+    --color-primary: #6b9bff;
+    --color-primary-hover: #8bb2ff;
+    --color-primary-contrast: #0b1220;
+    --color-focus: #6b9bff;
+    --color-success: #4cc38a;
+    --color-warning: #e0a33c;
+    --color-danger: #ff7a7a;
+    --color-on-danger: #241012;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 40%);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 45%);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #10141a;
+  --color-surface: #1a212b;
+  --color-surface-hover: #232c39;
+  --color-text: #e8ecf2;
+  --color-text-muted: #9aa5b5;
+  --color-border: #2c3644;
+  --color-primary: #6b9bff;
+  --color-primary-hover: #8bb2ff;
+  --color-primary-contrast: #0b1220;
+  --color-focus: #6b9bff;
+  --color-success: #4cc38a;
+  --color-warning: #e0a33c;
+  --color-danger: #ff7a7a;
+  --color-on-danger: #241012;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 40%);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 45%);
+}
